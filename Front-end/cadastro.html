@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="node_modules/select2/dist/css/select2.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Hello, world!</title>
+
+</head>
+
+<body>
+    <a name="top"> </a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <img class="navbar-brand" src="images/JFPEbranco.png"></img>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarMenu">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Institucional</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown">Processos</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a href="#" class="dropdown-item">Processo Eletrônico PJe</a>
+                        <a href="#" class="dropdown-item">Processo Eletrônico JEFs</a>
+                        <a href="#" class="dropdown-item">Processo Físico Tebas</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Publicações</a>
+                </li>
+            </ul>
+            <form class="form-inline">
+                <input class="form-control mr-2 my-2" type="text" placeholder="Pesquisar...">
+                <button class="btn btn-light">Buscar</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <div class="row">
+            <div class="col" id="conteudo-principal">
+                <div class="card">
+                    <div class="card-header">
+                        Cadastro de Usuário
+                    </div>
+                    <div class="card-body">
+
+                        <form class="needs-validation" novalidate>
+                            <div class="form-row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="validationCustom01">Primeiro Nome</label>
+                                    <input type="text" class="form-control" id="validationCustom01" value="" required>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="validationCustom02">Sobrenome</label>
+                                    <input type="text" class="form-control" id="validationCustom02" value="" required>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-3 mb-3">
+                                    <label for="ddlEstados">Estado</label>
+                                    <select class="form-control" id="ddlEstados" required>
+                                        <option selected value="">Selecione...</option>
+                                        <option value="1">Acre</option>
+                                        <option value="2">Alagoas</option>
+                                        <option value="3">Amapá</option>
+                                        <option value="4">Amazonas</option>
+                                        <option value="5">Bahia</option>
+                                        <option value="6">Ceará</option>
+                                        <option value="7">Distrito Federal</option>
+                                        <option value="8">Espírito Santo</option>
+                                        <option value="9">Goiás</option>
+                                        <option value="10">Maranhão</option>
+                                        <option value="11">Mato Grosso</option>
+                                        <option value="12">Mato Grosso do Sul</option>
+                                        <option value="13">Minas Gerais</option>
+                                        <option value="14">Pará</option>
+                                        <option value="15">Paraíba</option>                                        
+                                        <option value="16">Pernambuco</option>
+                                        <option value="17">Piauí</option>
+                                        <option value="18">Paraná</option>
+                                        <option value="19">Rio de Janeiro</option>
+                                        <option value="20">Rio Grande do Norte</option>
+                                        <option value="21">Rio Grande do Sul</option>
+                                        <option value="22">Rondônia</option>
+                                        <option value="23">Roraima</option>
+                                        <option value="24">Santa Catarina</option>
+                                        <option value="26">São Paulo</option>
+                                        <option value="26">Sergipe</option>
+                                        <option value="27">Tocantins</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Please select a valid state.
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="ddlCidade">Cidade</label>
+                                    <select class="form-control" id="ddlCidades" disabled>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Please provide a valid city.
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <label for="validationCustom05">Cep</label>
+                                    <input type="text" class="form-control" id="validationCustom05" required>
+                                    <div class="invalid-feedback">
+                                        Please provide a valid zip.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="data1">Data 1</label>
+                                    <input type="text" class="form-control datepicker" id="data1" value="" required>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="data2">Data 2</label>
+                                    <input type="text" class="form-control datepicker" id="data2" value="" required>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                                    <label class="form-check-label" for="invalidCheck">
+                                        Aceito os termos e condições
+                                    </label>
+                                    <div class="invalid-feedback">
+                                        Você deve aceitar antes de enviar
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary" type="submit">Enviar Formulário</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="container-fluid p-5 text-white text-center text-bold">
+        <div class="container">
+            <a href="#top"><img class="fixadorodape" src="images/scroll.png" alt="Subir para o topo"></a>
+            <div class="row">
+                <div class="col-xs-6 col-lg-4">
+                    <div class="row">
+                        <div class="col border footer-auditivo m-2">
+                            <div class="icone icone_azul"
+                                style="position: absolute; top: -35px; left: calc(50% - 58px);"><img
+                                    src="images/acessibilidade_icones.png"
+                                    alt="Representação gráfica para Acessibilidade Visual e Auditiva">
+                            </div>
+                            Este site é preparado para pessoas com deficiências visual e auditiva
+                            <div class="acessibilidade mt-2">
+                                <a href="http://www.vlibras.gov.br" target="_blank"><span class="text-white"
+                                        style="font-weight: normal;">libras</span></a>
+                                <img class="botao btnFontMais" src="images/acessibilidade/a-1.svg"
+                                    alt="Aumentar o tamanho das letras">
+                                <img class="botao btnFontMenos" src="images/acessibilidade/a-2.svg"
+                                    alt="Diminuir o tamanhao das letras">
+                                <img class="botao btnDaltonismo" src="images/acessibilidade/a-3.svg"
+                                    alt="Ativar ou desativar o modo Portal da Justiça Federal da 5ª Região em tons de cinza">
+                                <img class="botao btnVoltarNormal" src="images/acessibilidade/a-4.svg"
+                                    alt="Desfazer a configuração que foi escolhida">
+                                <img class="botao btnTradutor" src="images/acessibilidade/a-5.svg"
+                                    alt="Tradução feita pelo Google Tradutor. Não corresponde a tradução oficial do Tribunal Regional Federal da 5ª Região">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="row m-2">
+                        <div class="col border footer-metade d-flex align-items-center justify-content-center">
+                            <div class="titulo_links_footer">Acessos diretos</div>
+                            <a href="http://www.jfal.jus.br/" target="_blank"><span class="botao" style="color:#ffffff"
+                                    title="Acessar o Portal da Seção Judiciária de Alagoas">JFAL&nbsp;&nbsp;</span></a>
+                            <a href="http://www.jfce.jus.br/" target="_blank"><span class="botao" style="color:#ffffff"
+                                    title="Acessar o Portal da Seção Judiciária do Ceará">JFCE&nbsp;&nbsp;</span></a>
+                            <a href="http://www.jfpb.jus.br/" target="_blank"><span class="botao" style="color:#ffffff"
+                                    title="Acessar o Portal da Seção Judiciária da Paraiba">JFPB&nbsp;&nbsp;</span></a>
+                            <a href="http://www.jfpe.jus.br/" target="_blank"><span class="botao" style="color:#ffffff"
+                                    title="Acessar o Portal da Seção Judiciária de Pernambuco">JFPE&nbsp;&nbsp;</span></a>
+                            <a href="http://www.jfrn.jus.br/" target="_blank"><span class="botao" style="color:#ffffff"
+                                    title="Acessar o Portal da Seção Judiciária do Rio gGrande do Norte">JFRN&nbsp;&nbsp;</span></a>
+                            <a href="http://www.jfse.jus.br/" target="_blank"><span class="botao" style="color:#ffffff"
+                                    title="Acessar o Portal da Seção Judiciária de Sergipe">JFSE&nbsp;&nbsp;</span></a>
+                        </div>
+                    </div>
+                    <div class="row m-2">
+                        <div class="col border footer-metade mr-2 d-flex align-items-center justify-content-center">
+                            Recursos Humanos</div>
+                        <div class="col border footer-metade mr-2 d-flex align-items-center justify-content-center">
+                            Jornal Mural Diário</div>
+                        <div class="col border footer-metade d-flex align-items-center justify-content-center">JULIA
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="row my-2 ">
+                        <div class="col border footer-metade d-flex align-items-center justify-content-center">SEI</div>
+                    </div>
+                    <div class="row">
+                        <div
+                            class="col border footer-metade bg-white font-blue d-flex align-items-center justify-content-center">
+                            Portal BI</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/select2/dist/js/select2.full.min.js"></script>
+    <script src="node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <script src="node_modules/bootstrap-datepicker/js/locales/bootstrap-datepicker.pt-BR.js"></script>
+
+
+    <script>
+        $(document).ready(function(){
+            //O que vou fazer quando a página carregar
+            $('#ddlEstados').select2();
+            $('.datepicker').datepicker({
+                todayBtn: "linked",
+                language: "pt-BR"
+            });
+
+            $('#ddlEstados').on('select2:select', function (e) {
+                // Do something
+                var estado = e.params.data;
+                console.log('selecionou ' + estado.id + ' - ' + estado.text);
+                CarregarCidadesPorEstado(estado);
+
+                
+            });
+
+        });
+
+        function CarregarCidadesPorEstado(estado){
+            var $cidade = $('#ddlCidades');
+
+            console.log(estado);
+            if(estado.id !== ""){            
+                $.ajax({
+                    method: "GET",
+                    url: "https://localhost:44352/api/Cidade/" + estado.id,                    
+                    dataType: "json",
+                    success: function(data){
+                        var items = '<option value="">Selecione...</option>';
+                        $.each(data, function(i, cidade){
+                            items += '<option value="'+ cidade.id +'">'+ cidade.text +'</option>';
+                        });
+
+                        var $cidade = $('#ddlCidades');
+                        $cidade.prop('disabled', false);
+                        $cidade.html(items);
+                        $cidade.select2();
+                    }
+                });
+            }
+            else{
+                $cidade.html('');
+                $cidade.prop('disabled', true);
+            }
+
+            
+        }
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function() {
+          'use strict';
+          window.addEventListener('load', function() {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function(form) {
+              form.addEventListener('submit', function(event) {
+                if (form.checkValidity() === false) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+              }, false);
+            });
+          }, false);
+        })();
+        </script>
+</body>
+
+</html>
