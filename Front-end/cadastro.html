@@ -48,7 +48,7 @@
             </ul>
             <form class="form-inline">
                 <input class="form-control mr-2 my-2" type="text" placeholder="Pesquisar...">
-                <button class="btn btn-light">Buscar</button>
+                <button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModal">Buscar</button>
             </form>
         </div>
     </nav>
@@ -65,8 +65,8 @@
                         <form class="needs-validation" novalidate>
                             <div class="form-row">
                                 <div class="col-md-6 mb-3">
-                                    <label for="validationCustom01">Primeiro Nome</label>
-                                    <input type="text" class="form-control" id="validationCustom01" value="" required>
+                                    <label for="txtFirstName">Primeiro Nome</label>
+                                    <input type="text" class="form-control" id="txtFirstName" value="" required>
                                     <div class="valid-feedback">
                                         Looks good!
                                     </div>
@@ -238,6 +238,134 @@
             </div>
         </div>
     </footer>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <div class="card">
+                    <div class="card-header">
+                        Cadastro de Usuário
+                    </div>
+                    <div class="card-body">
+
+                        <form class="needs-validation" novalidate>
+                            <div class="form-row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="txtFirstName">Primeiro Nome</label>
+                                    <input type="text" class="form-control" id="txtFirstName" value="" required>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="validationCustom02">Sobrenome</label>
+                                    <input type="text" class="form-control" id="validationCustom02" value="" required>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-3 mb-3">
+                                    <label for="ddlEstados">Estado</label>
+                                    <select class="form-control" id="ddlEstados" required>
+                                        <option selected value="">Selecione...</option>
+                                        <option value="1">Acre</option>
+                                        <option value="2">Alagoas</option>
+                                        <option value="3">Amapá</option>
+                                        <option value="4">Amazonas</option>
+                                        <option value="5">Bahia</option>
+                                        <option value="6">Ceará</option>
+                                        <option value="7">Distrito Federal</option>
+                                        <option value="8">Espírito Santo</option>
+                                        <option value="9">Goiás</option>
+                                        <option value="10">Maranhão</option>
+                                        <option value="11">Mato Grosso</option>
+                                        <option value="12">Mato Grosso do Sul</option>
+                                        <option value="13">Minas Gerais</option>
+                                        <option value="14">Pará</option>
+                                        <option value="15">Paraíba</option>                                        
+                                        <option value="16">Pernambuco</option>
+                                        <option value="17">Piauí</option>
+                                        <option value="18">Paraná</option>
+                                        <option value="19">Rio de Janeiro</option>
+                                        <option value="20">Rio Grande do Norte</option>
+                                        <option value="21">Rio Grande do Sul</option>
+                                        <option value="22">Rondônia</option>
+                                        <option value="23">Roraima</option>
+                                        <option value="24">Santa Catarina</option>
+                                        <option value="26">São Paulo</option>
+                                        <option value="26">Sergipe</option>
+                                        <option value="27">Tocantins</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Please select a valid state.
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="ddlCidade">Cidade</label>
+                                    <select class="form-control" id="ddlCidades" disabled>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Please provide a valid city.
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <label for="validationCustom05">Cep</label>
+                                    <input type="text" class="form-control" id="validationCustom05" required>
+                                    <div class="invalid-feedback">
+                                        Please provide a valid zip.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="data1">Data 1</label>
+                                    <input type="text" class="form-control datepicker" id="data1" value="" required>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="data2">Data 2</label>
+                                    <input type="text" class="form-control datepicker" id="data2" value="" required>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                                    <label class="form-check-label" for="invalidCheck">
+                                        Aceito os termos e condições
+                                    </label>
+                                    <div class="invalid-feedback">
+                                        Você deve aceitar antes de enviar
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary" type="submit">Enviar Formulário</button>
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+        </div>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -247,10 +375,39 @@
     <script src="node_modules/select2/dist/js/select2.full.min.js"></script>
     <script src="node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
     <script src="node_modules/bootstrap-datepicker/js/locales/bootstrap-datepicker.pt-BR.js"></script>
+    <script src="js/jQuery-Autocomplete-master/dist/jquery.autocomplete.min.js"></script>
 
 
     <script>
         $(document).ready(function(){
+
+            var fruits = [
+                {value: 'horario', data: '123', mensagem: 'Nosso horário de atendimento é de 8h as 18h'}, 
+                {value: 'obrigado', data: '123', mensagem: 'Obrigado por entrar em contato com a 15 vara federal. Estamos a disposição etc....'}, 
+                {value: 'Carrot',data: '123'}, 
+                {value: 'Cherry',data: '123'}, 
+                {value: 'Banana',data: '123'}, 
+                {value: 'Radish',data: '123'}
+            ];
+
+            $('#txtFirstName').autocomplete({
+                lookup: fruits,
+                onSelect: function(suggestion) {
+                    $(this).val(suggestion.mensagem);
+                },
+                lookupFilter: function(suggestion, query, queryLowerCase) {
+                    if(query.startsWith('/')) {                        
+                        const filteredQuery = queryLowerCase.substring(1);                        
+                        if(filteredQuery.length > 0) {
+                            return suggestion.value.toLowerCase().indexOf(filteredQuery) >= 0;
+                        }
+                    }
+                    
+                    return false;
+                }
+            });
+
+
             //O que vou fazer quando a página carregar
             $('#ddlEstados').select2();
             $('.datepicker').datepicker({
@@ -263,9 +420,7 @@
                 var estado = e.params.data;
                 console.log('selecionou ' + estado.id + ' - ' + estado.text);
                 CarregarCidadesPorEstado(estado);
-
-                
-            });
+            });            
 
         });
 
