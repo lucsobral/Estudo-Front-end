@@ -1,0 +1,30 @@
+body{
+    background-image: url(../images/fundo.jpg);
+}
+p{
+    font-size: 1rem;
+}
+p, h4, h5{
+    color: white;
+}
+.bg-transparente{
+    background-color: #00000052;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 25px;
+    box-shadow: 7px 7px 5px rgba(50, 50, 50, 0.77);
+}
+.img-thumbnail{
+    height: 220px;
+}
+.timeline-item{
+    border: none;
+}
+.timeline-dots li.slide-active button {
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+}
+.timeline-dots button{
+    color: white;
+}

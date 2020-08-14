@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">  
+    <link rel="stylesheet" href="node_modules/timelinejs-slider/dist/css/timeline.min.css">  
+    <link rel="stylesheet" href="css/scrollspy.css">
+    <title>Hello, world!</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-2">
+                <img src="images/time-line/logo_jfpe.png">
+            </div>
+            <div class="col">
+                <h1 class="text-center">
+                    Linha do Tempo
+                </h1>
+            </div>
+            <div class="col-4">
+                <img src="images/time-line/espaco_memoria.jpg">
+            </div>
+        </div>
+        <div class="timeline-container timeline-theme-1">
+            <div class="timeline js-timeline">
+              <div data-time="1890">
+                <div class="media bg-transparente">
+                    <img class="align-self-center img-thumbnail mr-3"
+                        src="images/time-line/efbd23fe543f1d3b7e298fe8bd7d4e3d_1890.png">
+                    <div class="media-body">
+                        <h4>1890 (Marco Inicial)</h4>
+                        <p>Criação da Justiça Federal, através do Decreto nº 848, de 11 de outubro de 1890. Foi o
+                            marco inicial da história da Justiça Federal brasileira.</p>
+                    </div>
+                </div>
+              </div>
+              <div data-time="2016">
+                <div class="media bg-transparente">
+                    <img class="align-self-center img-thumbnail mr-3"
+                        src="images/time-line/fa98e2a33507d95a74350861ea84acfe_28defevereirode2005.jpg">
+                    <div class="media-body">
+                        <h4>1890 (Marco Inicial)</h4>
+                        <p>Criação da Justiça Federal, através do Decreto nº 848, de 11 de outubro de 1890. Foi o
+                            marco inicial da história da Justiça Federal brasileira.</p>
+                    </div>
+                </div>
+              </div>
+              <div data-time="2015">
+                <div class="media bg-transparente">
+                    <img class="align-self-center img-thumbnail mr-3"
+                        src="images/time-line/e3ae4c6e0d898f99064237fd369b233c_12demarode2007.jpg">
+                    <div class="media-body">
+                        <h4>1890 (Marco Inicial)</h4>
+                        <p>Criação da Justiça Federal, através do Decreto nº 848, de 11 de outubro de 1890. Foi o
+                            marco inicial da história da Justiça Federal brasileira.</p>
+                    </div>
+                </div>
+              </div>
+              <div data-time="2014">
+                <div class="media bg-transparente">
+                    <img class="align-self-center img-thumbnail mr-3"
+                        src="images/time-line/02f2c3b7aecac912498e5cb8f6bbf954_4denovembrode2010.jpg">
+                    <div class="media-body">
+                        <h4>1890 (Marco Inicial)</h4>
+                        <p>Criação da Justiça Federal, através do Decreto nº 848, de 11 de outubro de 1890. Foi o
+                            marco inicial da história da Justiça Federal brasileira.</p>
+                    </div>
+                </div>
+              </div>
+              <div data-time="2013">
+                <div class="media bg-transparente">
+                    <img class="align-self-center img-thumbnail mr-3"
+                        src="images/time-line/26cb15f645f9d89a93c036db93b5e662_10denovembrode2005.jpg">
+                    <div class="media-body">
+                        <h4>1890 (Marco Inicial)</h4>
+                        <p>Criação da Justiça Federal, através do Decreto nº 848, de 11 de outubro de 1890. Foi o
+                            marco inicial da história da Justiça Federal brasileira.</p>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+        <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="node_modules/timelinejs-slider/dist/js/timeline.min.js"></script>
+
+
+        <script>
+            $(document).ready(function () {                
+                console.log('Página carregada');
+                $('.js-timeline').Timeline({
+                    autoplay: true,
+                    pauseOnDotsHover: true
+                });
+            });
+        </script>
+
+</body>
+
+</html>
