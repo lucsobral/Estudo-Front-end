@@ -93,19 +93,19 @@
                                         <th scope="col">Ações</th>
                                     </thead>
                                     <tbody id="gridPessoas">
-                                        <tr>
-                                            <td>Lucas</td>
-                                            <td>Sobral</td>
+                                        <tr data-id='1'>
+                                            <td class="firstName">Lucas</td>
+                                            <td class="lastName">Sobral</td>
                                             <td>
-                                                <button class="btn btn-primary btnEdit" data-id='1'><i class="fa fa-edit"></i></button>
+                                                <button class="btn btn-primary btnEdit"><i class="fa fa-edit"></i></button>
                                                 <button class="btn btn-danger btnRemove"><i class="fa fa-trash"></i></button>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>Charles</td>
-                                            <td>Wagner</td>
+                                        <tr data-id='2'>
+                                            <td class="firstName">Charles</td>
+                                            <td class="lastName">Wagner</td>
                                             <td>
-                                                <button class="btn btn-primary btnEdit" data-id='2'><i class="fa fa-edit"></i></button>
+                                                <button class="btn btn-primary btnEdit"><i class="fa fa-edit"></i></button>
                                                 <button class="btn btn-danger btnRemove"><i class="fa fa-trash"></i></button>
                                             </td>
                                         </tr>
@@ -206,56 +206,74 @@
         $(document).ready(function () {
             $('#meuForm').submit(function (event) {
                 event.preventDefault();
-
-                console.log($('#txtFirstName').val());
-                console.log($('#txtLastName').val());
-
-                var firstName = $('#txtFirstName').val();
-                var lastName = $('#txtLastName').val();
-                var id = $('#txtId').val();
-
-                //$('#gridPessoas').html('');
-                var btnEdit = '<td><button class="btn btn-primary btnEdit"><i class="fa fa-edit"></i></button> ';
-                var btnRemove = '<button class="btn btn-danger btnRemove"><i class="fa fa-trash"></i></button></td>';
                 
+                var id = $('#txtId').val();
                 if(id == "")
                 {
-                    $('#gridPessoas').prepend('<tr><td>' + firstName + '</td><td>' + lastName + '</td>' + btnEdit + btnRemove + '</tr>');
+                    $.get( "https://localhost:44352/api/Usuario", function( data ) {                        
+                        inserirLinha(data);
+                    });
                 }
-                else{
+                else {
+                    var firstName = $('#txtFirstName').val();
+                    var lastName = $('#txtLastName').val();
+
+                    console.log(firstName);
                     //TODO editar pessoa
+                    var $tr = $('#gridPessoas').find("tr[data-id='"+ id +"']");
+                    console.log($tr);
+                    teste = $tr;
+                    $tr.find('.firstName').html(firstName);
+                    $tr.find('.lastName').html(lastName);
+                    
+                    limparCampos();                
                 }
+                                
+            });            
 
-                $('#txtFirstName').val('');
-                $('#txtLastName').val('');
+            recarregarEventosBotoes();
+        });
 
+        function limparCampos(){
+            $('#txtFirstName').val('');
+            $('#txtLastName').val('');
+            $('#txtId').val('');
+        }
 
+        function inserirLinha(id){
+            var firstName = $('#txtFirstName').val();
+            var lastName = $('#txtLastName').val();
+            
+            //$('#gridPessoas').html('');
+            var btnEdit = '<td><button class="btn btn-primary btnEdit"><i class="fa fa-edit"></i></button> ';
+            var btnRemove = '<button class="btn btn-danger btnRemove"><i class="fa fa-trash"></i></button></td>';
+
+            $('#gridPessoas').prepend('<tr data-id="'+ id +'"><td class="firstName">' + firstName + '</td><td class="lastName">' + lastName + '</td>' + btnEdit + btnRemove + '</tr>');
+            recarregarEventosBotoes();
+
+            limparCampos();
+        }
+
+        function recarregarEventosBotoes(){
+            $('.btnEdit').click(function(){
+                teste = this;
+
+                var $tr = $(this).closest('tr');
+
+                var firstName = $tr.find('td').eq(0).html();
+                var secondName = $tr.find('td').eq(1).html();
+                var id = $tr.data('id');
+
+                $('#txtFirstName').val(firstName);
+                $('#txtLastName').val(secondName);
+                $('#txtId').val(id);
             });
 
             $('.btnRemove').click(function () {
                 $(this).closest('tr').remove();
             });
-
-            $('.btnEdit').click(function(){
-                teste = this;
-
-                var firstName = $(this).closest('tr').find('td').eq(0).html();
-                var secondName = $(this).closest('tr').find('td').eq(1).html();
-                var id = $(this).data('id');
-
-                $('#txtFirstName').val(firstName);
-                $('#txtLastName').val(secondName);
-                $('#txtId').val(id);
-
-                
-            });
-        });
+        }
     </script>
-
-
-
-
-
 
 
 
