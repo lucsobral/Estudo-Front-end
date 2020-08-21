@@ -81,7 +81,11 @@
                                 </div>
                             </div>
                             <input type="hidden" id="txtId">
-                            <button class="btn btn-primary" type="submit">Enviar Formulário</button>
+                            <button class="btn btn-primary" id="btnEnviar" type="submit">Enviar Formulário</button>
+                            <button class="btn btn-primary" type="button" disabled>
+                                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                Loading...
+                            </button>
                         </form>
 
                         <div class="row mt-5">
@@ -97,16 +101,20 @@
                                             <td class="firstName">Lucas</td>
                                             <td class="lastName">Sobral</td>
                                             <td>
-                                                <button class="btn btn-primary btnEdit"><i class="fa fa-edit"></i></button>
-                                                <button class="btn btn-danger btnRemove"><i class="fa fa-trash"></i></button>
+                                                <button class="btn btn-primary btnEdit"><i
+                                                        class="fa fa-edit"></i></button>
+                                                <button class="btn btn-danger btnRemove"><i
+                                                        class="fa fa-trash"></i></button>
                                             </td>
                                         </tr>
                                         <tr data-id='2'>
                                             <td class="firstName">Charles</td>
                                             <td class="lastName">Wagner</td>
                                             <td>
-                                                <button class="btn btn-primary btnEdit"><i class="fa fa-edit"></i></button>
-                                                <button class="btn btn-danger btnRemove"><i class="fa fa-trash"></i></button>
+                                                <button class="btn btn-primary btnEdit"><i
+                                                        class="fa fa-edit"></i></button>
+                                                <button class="btn btn-danger btnRemove"><i
+                                                        class="fa fa-trash"></i></button>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -203,15 +211,33 @@
 
     <script>
         var teste;
+
+        function loadButton(idButton) {
+            var spinner = '<span class="spinner-border spinner-border-sm mr-1" role="status" aria-hidden="true"></span>';
+            var $btn = $(idButton);
+            var btnTexto = $btn.html();
+            $btn.html(spinner + btnTexto);
+
+            $btn.prop('disabled', true);
+        }
+
+        function stopLoadButton(idButton) {
+            var $btn = $(idButton);
+            $btn.prop('disabled', false);
+            $btn.find('span').remove();
+        }
+
         $(document).ready(function () {
             $('#meuForm').submit(function (event) {
                 event.preventDefault();
-                
+
+                loadButton('#btnEnviar');
+
                 var id = $('#txtId').val();
-                if(id == "")
-                {
-                    $.get( "https://localhost:44352/api/Usuario", function( data ) {                        
+                if (id == "") {
+                    $.get("https://localhost:44352/api/Usuario", function (data) {
                         inserirLinha(data);
+                        stopLoadButton('#btnEnviar');
                     });
                 }
                 else {
@@ -220,42 +246,42 @@
 
                     console.log(firstName);
                     //TODO editar pessoa
-                    var $tr = $('#gridPessoas').find("tr[data-id='"+ id +"']");
+                    var $tr = $('#gridPessoas').find("tr[data-id='" + id + "']");
                     console.log($tr);
                     teste = $tr;
                     $tr.find('.firstName').html(firstName);
                     $tr.find('.lastName').html(lastName);
-                    
-                    limparCampos();                
+
+                    limparCampos();
                 }
-                                
-            });            
+
+            });
 
             recarregarEventosBotoes();
         });
 
-        function limparCampos(){
+        function limparCampos() {
             $('#txtFirstName').val('');
             $('#txtLastName').val('');
             $('#txtId').val('');
         }
 
-        function inserirLinha(id){
+        function inserirLinha(id) {
             var firstName = $('#txtFirstName').val();
             var lastName = $('#txtLastName').val();
-            
+
             //$('#gridPessoas').html('');
             var btnEdit = '<td><button class="btn btn-primary btnEdit"><i class="fa fa-edit"></i></button> ';
             var btnRemove = '<button class="btn btn-danger btnRemove"><i class="fa fa-trash"></i></button></td>';
 
-            $('#gridPessoas').prepend('<tr data-id="'+ id +'"><td class="firstName">' + firstName + '</td><td class="lastName">' + lastName + '</td>' + btnEdit + btnRemove + '</tr>');
+            $('#gridPessoas').prepend('<tr data-id="' + id + '"><td class="firstName">' + firstName + '</td><td class="lastName">' + lastName + '</td>' + btnEdit + btnRemove + '</tr>');
             recarregarEventosBotoes();
 
             limparCampos();
         }
 
-        function recarregarEventosBotoes(){
-            $('.btnEdit').click(function(){
+        function recarregarEventosBotoes() {
+            $('.btnEdit').click(function () {
                 teste = this;
 
                 var $tr = $(this).closest('tr');
@@ -288,6 +314,16 @@
 
 
     <script>
+        function formIsValid() {
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function (form) {
+                form.addEventListener('submit', function (event) {
+                    return form.checkValidity();
+                });
+            });
+        }
+
         // Example starter JavaScript for disabling form submissions if there are invalid fields
         (function () {
             'use strict';
@@ -297,6 +333,7 @@
                 // Loop over them and prevent submission
                 var validation = Array.prototype.filter.call(forms, function (form) {
                     form.addEventListener('submit', function (event) {
+                        console.log(form.checkValidity());
                         if (form.checkValidity() === false) {
                             event.preventDefault();
                             event.stopPropagation();
