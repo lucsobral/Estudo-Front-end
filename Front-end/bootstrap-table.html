@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-table/dist/bootstrap-table.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Hello, world!</title>
+
+</head>
+
+<body>
+    <a name="top"> </a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <img class="navbar-brand" src="images/JFPEbranco.png"></img>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarMenu">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Institucional</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown">Processos</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a href="#" class="dropdown-item">Processo Eletrônico PJe</a>
+                        <a href="#" class="dropdown-item">Processo Eletrônico JEFs</a>
+                        <a href="#" class="dropdown-item">Processo Físico Tebas</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Publicações</a>
+                </li>
+            </ul>
+            <form class="form-inline">
+                <input class="form-control mr-2 my-2" type="text" placeholder="Pesquisar...">
+                <button type="submit" class="btn btn-light" data-toggle="modal"
+                    data-target="#exampleModal">Buscar</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <div class="row">
+            <div class="col" id="conteudo-principal">
+                <div class="card">
+                    <div class="card-header">
+                        Cadastro de Usuário
+                    </div>
+                    <div class="card-body">
+
+
+                        <table id="table"
+                            data-locale="pt-BR"
+                            data-pagination="true"
+                            data-page-size="5"
+                            data-page-list="[5, 10, 20]"
+                            data-show-export="true"
+                            data-show-columns="true">
+                            <thead>
+                                <tr>
+                                    <th data-field="ID">ID</th>
+                                    <th data-field="Sigla">Sigla</th>
+                                    <th data-field="Nome">Nome</th>
+                                </tr>
+                            </thead>
+                        </table>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="container-fluid p-5 text-white text-center text-bold">
+        <div class="container">
+            <a href="#top"><img class="fixadorodape" src="images/scroll.png" alt="Subir para o topo"></a>
+            <div class="row">
+                <div class="col-xs-6 col-lg-4">
+                    <div class="row">
+                        <div class="col border footer-auditivo m-2">
+                            <div class="icone icone_azul"
+                                style="position: absolute; top: -35px; left: calc(50% - 58px);"><img
+                                    src="images/acessibilidade_icones.png"
+                                    alt="Representação gráfica para Acessibilidade Visual e Auditiva">
+                            </div>
+                            Este site é preparado para pessoas com deficiências visual e auditiva
+                            <div class="acessibilidade mt-2">
+                                <a href="http://www.vlibras.gov.br" target="_blank"><span class="text-white"
+                                        style="font-weight: normal;">libras</span></a>
+                                <img class="botao btnFontMais" src="images/acessibilidade/a-1.svg"
+                                    alt="Aumentar o tamanho das letras">
+                                <img class="botao btnFontMenos" src="images/acessibilidade/a-2.svg"
+                                    alt="Diminuir o tamanhao das letras">
+                                <img class="botao btnDaltonismo" src="images/acessibilidade/a-3.svg"
+                                    alt="Ativar ou desativar o modo Portal da Justiça Federal da 5ª Região em tons de cinza">
+                                <img class="botao btnVoltarNormal" src="images/acessibilidade/a-4.svg"
+                                    alt="Desfazer a configuração que foi escolhida">
+                                <img class="botao btnTradutor" src="images/acessibilidade/a-5.svg"
+                                    alt="Tradução feita pelo Google Tradutor. Não corresponde a tradução oficial do Tribunal Regional Federal da 5ª Região">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="row m-2">
+                        <div class="col border footer-metade d-flex align-items-center justify-content-center">
+                            <div class="titulo_links_footer">Acessos diretos</div>
+                            <a href="http://www.jfal.jus.br/" target="_blank"><span class="botao" style="color:#ffffff"
+                                    title="Acessar o Portal da Seção Judiciária de Alagoas">JFAL&nbsp;&nbsp;</span></a>
+                            <a href="http://www.jfce.jus.br/" target="_blank"><span class="botao" style="color:#ffffff"
+                                    title="Acessar o Portal da Seção Judiciária do Ceará">JFCE&nbsp;&nbsp;</span></a>
+                            <a href="http://www.jfpb.jus.br/" target="_blank"><span class="botao" style="color:#ffffff"
+                                    title="Acessar o Portal da Seção Judiciária da Paraiba">JFPB&nbsp;&nbsp;</span></a>
+                            <a href="http://www.jfpe.jus.br/" target="_blank"><span class="botao" style="color:#ffffff"
+                                    title="Acessar o Portal da Seção Judiciária de Pernambuco">JFPE&nbsp;&nbsp;</span></a>
+                            <a href="http://www.jfrn.jus.br/" target="_blank"><span class="botao" style="color:#ffffff"
+                                    title="Acessar o Portal da Seção Judiciária do Rio gGrande do Norte">JFRN&nbsp;&nbsp;</span></a>
+                            <a href="http://www.jfse.jus.br/" target="_blank"><span class="botao" style="color:#ffffff"
+                                    title="Acessar o Portal da Seção Judiciária de Sergipe">JFSE&nbsp;&nbsp;</span></a>
+                        </div>
+                    </div>
+                    <div class="row m-2">
+                        <div class="col border footer-metade mr-2 d-flex align-items-center justify-content-center">
+                            Recursos Humanos</div>
+                        <div class="col border footer-metade mr-2 d-flex align-items-center justify-content-center">
+                            Jornal Mural Diário</div>
+                        <div class="col border footer-metade d-flex align-items-center justify-content-center">JULIA
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="row my-2 ">
+                        <div class="col border footer-metade d-flex align-items-center justify-content-center">SEI</div>
+                    </div>
+                    <div class="row">
+                        <div
+                            class="col border footer-metade bg-white font-blue d-flex align-items-center justify-content-center">
+                            Portal BI</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/bootstrap-table/dist/bootstrap-table.min.js"></script>
+    <script	src="node_modules/bootstrap-table/dist/bootstrap-table-locale-all.min.js"></script>    
+
+    <script>
+        var teste;
+        
+
+        $(document).ready(function () {
+            var $table = $('#table');
+            $table.bootstrapTable({data: dataJson});
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+        var dataJson = [{
+	"ID": "1",
+	"Sigla": "AC",
+	"Nome": "Acre"
+},
+     {
+	"ID": "2",
+	"Sigla": "AL",
+	"Nome": "Alagoas"
+},
+     {
+	"ID": "3",
+	"Sigla": "AM",
+	"Nome": "Amazonas"
+},
+     {
+	"ID": "4",
+	"Sigla": "AP",
+	"Nome": "Amapá"
+},
+     {
+	"ID": "5",
+	"Sigla": "BA",
+	"Nome": "Bahia"
+},
+     {
+	"ID": "6",
+	"Sigla": "CE",
+	"Nome": "Ceará"
+},
+     {
+	"ID": "7",
+	"Sigla": "DF",
+	"Nome": "Distrito Federal"
+},
+     {
+	"ID": "8",
+	"Sigla": "ES",
+	"Nome": "Espírito Santo"
+},
+     {
+	"ID": "9",
+	"Sigla": "GO",
+	"Nome": "Goiás"
+},
+     {
+	"ID": "10",
+	"Sigla": "MA",
+	"Nome": "Maranhão"
+},
+     {
+	"ID": "11",
+	"Sigla": "MG",
+	"Nome": "Minas Gerais"
+},
+     {
+	"ID": "12",
+	"Sigla": "MS",
+	"Nome": "Mato Grosso do Sul"
+},
+     {
+	"ID": "13",
+	"Sigla": "MT",
+	"Nome": "Mato Grosso"
+},
+     {
+	"ID": "14",
+	"Sigla": "PA",
+	"Nome": "Pará"
+},
+     {
+	"ID": "15",
+	"Sigla": "PB",
+	"Nome": "Paraíba"
+},
+     {
+	"ID": "16",
+	"Sigla": "PE",
+	"Nome": "Pernambuco"
+},
+     {
+	"ID": "17",
+	"Sigla": "PI",
+	"Nome": "Piauí"
+},
+     {
+	"ID": "18",
+	"Sigla": "PR",
+	"Nome": "Paraná"
+},
+     {
+	"ID": "19",
+	"Sigla": "RJ",
+	"Nome": "Rio de Janeiro"
+},
+     {
+	"ID": "20",
+	"Sigla": "RN",
+	"Nome": "Rio Grande do Norte"
+},
+     {
+	"ID": "21",
+	"Sigla": "RO",
+	"Nome": "Rondônia"
+},
+     {
+	"ID": "22",
+	"Sigla": "RR",
+	"Nome": "Roraima"
+},
+     {
+	"ID": "23",
+	"Sigla": "RS",
+	"Nome": "Rio Grande do Sul"
+},
+     {
+	"ID": "24",
+	"Sigla": "SC",
+	"Nome": "Santa Catarina"
+},
+     {
+	"ID": "25",
+	"Sigla": "SE",
+	"Nome": "Sergipe"
+},
+     {
+	"ID": "26",
+	"Sigla": "SP",
+	"Nome": "São Paulo"
+},
+     {
+	"ID": "27",
+	"Sigla": "TO",
+	"Nome": "Tocantins"
+}];
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        function formIsValid() {
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function (form) {
+                form.addEventListener('submit', function (event) {
+                    return form.checkValidity();
+                });
+            });
+        }
+
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function () {
+            'use strict';
+            window.addEventListener('load', function () {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        console.log(form.checkValidity());
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
+</body>
+
+</html>
