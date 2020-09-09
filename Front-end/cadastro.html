@@ -62,21 +62,15 @@
                     </div>
                     <div class="card-body">
 
-                        <form class="needs-validation" novalidate>
+                        <form id="meuForm" method="get" action="">
                             <div class="form-row">
                                 <div class="col-md-6 mb-3">
                                     <label for="txtFirstName">Primeiro Nome</label>
-                                    <input type="text" class="form-control" id="txtFirstName" value="" required>
-                                    <div class="valid-feedback">
-                                        Looks good!
-                                    </div>
+                                    <input type="text" class="form-control" id="txtFirstName" name="txtFirstName" required>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="validationCustom02">Sobrenome</label>
-                                    <input type="text" class="form-control" id="validationCustom02" value="" required>
-                                    <div class="valid-feedback">
-                                        Looks good!
-                                    </div>
+                                    <input type="text" class="form-control" id="validationCustom02" name="validationCustom02" required>
                                 </div>
                             </div>
                             <div class="form-row">
@@ -167,6 +161,31 @@
             </div>
         </div>
     </div>
+
+    <form class="cmxform" id="commentForm" method="get" action="">
+        <fieldset>
+          <legend>Please provide your name, email address (won't be published) and a comment</legend>
+          <p>
+            <label for="cname">Name (required, at least 2 characters)</label>
+            <input id="cname" name="name" minlength="2" type="text" required>
+          </p>
+          <p>
+            <label for="cemail">E-Mail (required)</label>
+            <input id="cemail" type="email" name="email" required>
+          </p>
+          <p>
+            <label for="curl">URL (optional)</label>
+            <input id="curl" type="url" name="url">
+          </p>
+          <p>
+            <label for="ccomment">Your comment (required)</label>
+            <textarea id="ccomment" name="comment" required></textarea>
+          </p>
+          <p>
+            <input class="submit" type="submit" value="Submit">
+          </p>
+        </fieldset>
+      </form>
 
     <footer class="container-fluid p-5 text-white text-center text-bold">
         <div class="container">
@@ -319,26 +338,17 @@
                                 </div>
                                 <div class="col-md-3 mb-3">
                                     <label for="validationCustom05">Cep</label>
-                                    <input type="text" class="form-control" id="validationCustom05" required>
-                                    <div class="invalid-feedback">
-                                        Please provide a valid zip.
-                                    </div>
+                                    <input type="text" class="form-control" id="validationCustom05" name="validationCustom05" required>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="col-md-6 mb-3">
                                     <label for="data1">Data 1</label>
-                                    <input type="text" class="form-control datepicker" id="data1" value="" required>
-                                    <div class="valid-feedback">
-                                        Looks good!
-                                    </div>
+                                    <input type="text" class="form-control datepicker" id="data1" name="data1" required>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="data2">Data 2</label>
-                                    <input type="text" class="form-control datepicker" id="data2" value="" required>
-                                    <div class="valid-feedback">
-                                        Looks good!
-                                    </div>
+                                    <input type="text" class="form-control datepicker" id="data2" name="data2" required>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -376,10 +386,14 @@
     <script src="node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
     <script src="node_modules/bootstrap-datepicker/js/locales/bootstrap-datepicker.pt-BR.js"></script>
     <script src="js/jQuery-Autocomplete-master/dist/jquery.autocomplete.min.js"></script>
+    <script src="node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
 
 
     <script>
         $(document).ready(function(){
+
+            $("#meuForm").validate();
+            $("#commentForm").validate();
 
             var fruits = [
                 {value: 'horario', data: '123', mensagem: 'Nosso horário de atendimento é de 8h as 18h'}, 
@@ -457,42 +471,6 @@
     </script>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <script>
-        // Example starter JavaScript for disabling form submissions if there are invalid fields
-        (function() {
-          'use strict';
-          window.addEventListener('load', function() {
-            // Fetch all the forms we want to apply custom Bootstrap validation styles to
-            var forms = document.getElementsByClassName('needs-validation');
-            // Loop over them and prevent submission
-            var validation = Array.prototype.filter.call(forms, function(form) {
-              form.addEventListener('submit', function(event) {
-                if (form.checkValidity() === false) {
-                  event.preventDefault();
-                  event.stopPropagation();
-                }
-                form.classList.add('was-validated');
-              }, false);
-            });
-          }, false);
-        })();
-        </script>
 </body>
 
 </html>
