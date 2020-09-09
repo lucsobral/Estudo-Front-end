@@ -7,3 +7,5 @@
 /Front-end/node_modules
 /.vs
 /API/EstudoFrontEnd/obj
+/API/EstudoFrontEnd/bin/Debug/netcoreapp3.1
+/.vscode
