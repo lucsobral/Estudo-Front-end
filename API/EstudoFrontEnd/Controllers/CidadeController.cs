@@ -25,7 +25,7 @@ namespace EstudoFrontEnd.Controllers
         [HttpGet("{id}")]
         public ActionResult<IEnumerable<Estado>> Get(int id)
         {
-            var JSON = System.IO.File.ReadAllText("C:\\Users\\Lucas\\source\\repos\\EstudoFrontEnd\\EstudoFrontEnd\\Json\\Cidades.json");
+            var JSON = System.IO.File.ReadAllText("D:\\Projetos\\Estudo Front-end\\Estudo-Front-end\\API\\EstudoFrontEnd\\Json\\Cidades.json");
 
             var cidades = JsonConvert.DeserializeObject<IEnumerable<Cidade>>(JSON);
 
